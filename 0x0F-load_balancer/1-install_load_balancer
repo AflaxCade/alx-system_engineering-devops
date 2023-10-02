@@ -8,25 +8,30 @@
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 
-# edit config file
+# Edit config file
 server_config="
 frontend  aflah_frontend
         bind *:80
         mode http
         default_backend aflah_backend
+        timeout client 30s
+        timeout connect 30s
+        timeout server 30s
 backend aflah_backend
-        mode http         # Change this line to mode http
+        mode http
         balance roundrobin
+        timeout client 30s
+        timeout server 30s
         server 358420-web-01 34.224.16.126:80 check
         server 358420-web-02 54.237.34.32:80 check
 "
-echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo "$server_config" | sudo tee /etc/haproxy/haproxy.cfg > /dev/null
 
-# enable haproxy to be started by init script
-echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+# Enable HAProxy to be started by init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy > /dev/null
 
-# Testing the HAproxy configuration file
+# Testing the HAProxy configuration file
 sudo haproxy -c -f /etc/haproxy/haproxy.cfg
 
-# Restart the Nginx service
+# Restart the HAProxy service
 sudo service haproxy restart
