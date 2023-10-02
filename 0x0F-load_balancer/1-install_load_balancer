@@ -6,19 +6,19 @@
 
 # Install and configure HAproxy on my lb-01 server.
 sudo apt-get -y update
-apt-get -y install haproxy
+sudo apt-get -y install haproxy
 
 # edit config file
-server_config=\
-"
+server_config="
 frontend  aflah_frontend
         bind *:80
         mode http
         default_backend aflah_backend
 backend aflah_backend
+        mode http         # Change this line to mode http
         balance roundrobin
         server 358420-web-01 34.224.16.126:80 check
-        server 358420-web-01 54.237.34.32:80 check
+        server 358420-web-02 54.237.34.32:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
