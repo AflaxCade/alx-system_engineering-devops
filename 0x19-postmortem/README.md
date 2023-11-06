@@ -19,10 +19,10 @@
 
 ## Corrective and Preventative Measures
 - To prevent future load balancer meltdowns, we'll:
-  1- Throw regular load balancer audits to catch it in the act.
-  2- Slap on automated monitoring glasses for load balancer supervision.
-  3- Write a load balancer diary for a tell-all memoir.
-  4- Give the engineering team load balancer config therapy.
-  5- Install a direct hotline to DevOps and Network teams for superhero rescue missions.
+  1. Throw regular load balancer audits to catch it in the act.
+  2. Slap on automated monitoring glasses for load balancer supervision.
+  3. Write a load balancer diary for a tell-all memoir.
+  4. Give the engineering team load balancer config therapy.
+  5. Install a direct hotline to DevOps and Network teams for superhero rescue missions.
 
 This outage taught us that even load balancers can have a bad hair day. But with these measures, we'll make sure they never steal the spotlight again!
