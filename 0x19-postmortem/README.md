@@ -6,11 +6,11 @@
 - **Root Cause**: The drama unfolded because our load balancer had a 'too-much-favoritism' complex.
 
 ## Timeline
-- **Detection**: The plot thickened at 2023-11-01 10:00 AM (UTC) when our alert system went, "Houston, we have a problem."
-- **Actions Taken**: Our tech heroes jumped into action, Sherlock Holmes-style, chasing ghosts in the form of database and app server issues.
-- **Misleading Paths**: They ventured into the database server, tried to pump up app servers, but it was a wild goose chase.
-- **Escalation**: The bat signal went out to DevOps and the Network team, suspecting network shenanigans.
-- **Resolution**: The knight in shining armor was finally found - a wonky load balancer! Corrected and saved the day.
+- **10:00 AM (UTC)** - **Detection**: The plot thickened when our alert system went, "Houston, we have a problem."
+- **10:05 AM (UTC)** - **Actions Taken**: Our tech heroes jumped into action, Sherlock Holmes-style, chasing ghosts in the form of database and app server issues.
+- **10:15 AM (UTC)** - **Misleading Paths**: They ventured into the database server, tried to pump up app servers, but it was a wild goose chase.
+- **10:30 AM (UTC)** - **Escalation**: The bat signal went out to DevOps and the Network team, suspecting network shenanigans.
+- **11:30 AM (UTC)** - **Resolution**: The knight in shining armor was finally found - a wonky load balancer! Corrected and saved the day.
 
 ## Root Cause and Resolution
 - **Root Cause**: It was a classic case of load balancer favoritism. Some servers got all the love, while others were ghosted, leading to web chaos.
