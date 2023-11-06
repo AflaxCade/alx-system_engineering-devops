@@ -1,4 +1,4 @@
-# When Load Balancers Forget How to Share: A Web Stack Outage Comedy
+# When Load Balancers Forget How to Share: A Web Stack Outage
 
 ## Issue Summary
 - **Duration**: Start time: 2023-11-01 10:00 AM (UTC), End time: 2023-11-01 11:30 AM (UTC)
