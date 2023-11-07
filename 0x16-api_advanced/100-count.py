@@ -1,12 +1,6 @@
 #!/usr/bin/python3
-"""
-Function that queries the Reddit API and prints
-the top ten hot posts of a subreddit
-"""
 import re
 import requests
-import sys
-
 
 def add_title(dictionary, hot_posts):
     """ Adds item into a list """
@@ -21,7 +15,6 @@ def add_title(dictionary, hot_posts):
                 dictionary[key] += 1
     hot_posts.pop(0)
     add_title(dictionary, hot_posts)
-
 
 def recurse(subreddit, dictionary, after=None):
     """ Queries to Reddit API """
@@ -51,7 +44,6 @@ def recurse(subreddit, dictionary, after=None):
         return
     recurse(subreddit, dictionary, after=after)
 
-
 def count_words(subreddit, word_list):
     """ Init function """
     dictionary = {}
@@ -67,6 +59,11 @@ def count_words(subreddit, word_list):
     if len(l) != 0:
         for item in l:
             if item[1] is not 0:
-                print("{}: {}".format(item[0], item[1]))
+                print("{}: {}".format(item[0], item[1))
     else:
         print("")
+
+# Call the function with your desired subreddit and word list
+subreddit = 'your_subreddit_here'
+word_list = ['word1', 'word2', 'word3']  # Add your specific words here
+count_words(subreddit, word_list)
