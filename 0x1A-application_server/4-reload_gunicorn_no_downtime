@@ -1,26 +1,4 @@
 #!/usr/bin/env bash
+#carefully reloads Gunicorn .
 
-# Find the process ID of Gunicorn
-pid=$(pgrep gunicorn)
-
-# Check if Gunicorn is running
-if [ -z "$pid" ]; then
-  echo "Gunicorn is not running."
-  exit 1
-fi
-
-# Send a signal to Gunicorn master process to gracefully reload
-kill -HUP "$pid"
-
-# Wait for a few seconds to allow workers to finish processing requests
-sleep 5
-
-# Check if Gunicorn workers have been renewed
-new_pid=$(pgrep gunicorn)
-if [ "$pid" == "$new_pid" ]; then
-  echo "Gunicorn reload failed."
-  exit 1
-fi
-
-echo "Gunicorn reloaded successfully."
-exit 0
+pgrep gunicorn | xargs -I {} kill -HUP {}
