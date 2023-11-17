@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-#carefully reloads Gunicorn .
 
-pgrep gunicorn | xargs -I {} kill -HUP {}
+# Gracefully reloads Gunicorn
+if pgrep gunicorn > /dev/null; then
+    pgrep gunicorn | xargs -I {} kill -HUP {}
+    echo "OK"
+else
+    echo "NOk"
+fi
